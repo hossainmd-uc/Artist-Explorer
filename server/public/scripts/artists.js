@@ -6,9 +6,18 @@ async function getArtists () {
 
     const app = document.getElementById('app')
 
-    const cardContainer = document.createElement("div")
-    cardContainer.id = "main-content"
-    
+    const mainContainer = document.createElement("div")
+    mainContainer.id = "main-content"
+
+    const artistContainer = document.createElement("div")
+    artistContainer.id = "artist-content"
+
+    const artistHeader = document.createElement("p")
+    artistHeader.textContent = "Popular Artists"
+    artistHeader.id = "artist-header"
+
+    mainContainer.appendChild(artistHeader)
+
     data.map(item => {
         const card = document.createElement("div");
         card.id = "card";
@@ -24,20 +33,28 @@ async function getArtists () {
         const description = document.createElement("p");
         description.textContent = item.description;
         textContent.appendChild(description);
+    
 
         const image = document.createElement("img");
         image.src = item.image;
         image.id = "image"
 
+        const infoDiv = document.createElement('div')
+        const readMore = document.createElement('a')
+        readMore.textContent = 'Read More'
+        readMore.href = `/artists/${item.id}`
+        infoDiv.appendChild(readMore)
+
         card.appendChild(textContent)
         card.appendChild(image);
+        textContent.appendChild(infoDiv)
 
-cardContainer.appendChild(card);
+        artistContainer.appendChild(card);
 
     })
 
-
-    app.appendChild(cardContainer)
+    mainContainer.appendChild(artistContainer)
+    app.appendChild(mainContainer)
 
 }
 

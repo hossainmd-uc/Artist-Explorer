@@ -9,7 +9,7 @@ app.use('/artists', artistRouter)
 
 app.get('/', (req, res) => {
     res.status(200)
-    res.send('<h1 style="text-align: center; margin-top: 50px;">UnEarthed API</h1>')
+    res.send('<h1 style="text-align: center; margin-top: 50px;">Artisse API</h1>')
 })
 
 const PORT = process.env.PORT || 3001

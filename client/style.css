@@ -16,13 +16,14 @@
 
 #app {
   background-color: rgb(127, 41, 73);
-    min-width: 100vw;
-    min-height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 20px;
+
 }
 
 body {
   margin: 0;
-  display: flex;
   min-width: 100vh;
   min-height: 100vh;
 }
@@ -36,12 +37,18 @@ h1 {
 #card {
   display: flex;
   flex-direction: row;
+
+  gap:10px; 
   padding: 1em;
+  min-width: 350px;
   max-width: 350px;
+  min-height: 170px;
   text-wrap: wrap;
 
+  border-style: solid;
   border-radius: 3px;
-  border-color:white;
+  border-width: 3px;
+  border-color:rgb(228, 228, 228);
 
 }
 
@@ -52,4 +59,63 @@ h1 {
 #image {
   flex: 1;
   object-fit:cover;
+  max-width: 100px;
+  border-radius: 5px;
+}
+
+#artist-content {
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo {
+  max-width: 50px;
+}
+
+#headlogo {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+}
+
+#logotext{
+  color: white;
+}
+
+header {
+  background-color:rgb(99, 34, 51);
+
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+button {
+  font-size: 20px;
+  font-weight: bold;
+  border-width: 0cap;
+  border-radius: 1px;
+  
+  padding: 20px;
+
+  background-color: rgb(170, 85, 54);
+}
+
+button:hover {
+  background-color: rgb(217, 109, 69);
+  cursor:pointer;
+}
+
+#artist-header {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+
+#card > div:last-child {
+  align-self: flex-start; /* Align the last item to the end of the cross-axis */
 }

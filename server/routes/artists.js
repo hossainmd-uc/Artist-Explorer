@@ -14,4 +14,10 @@ artistRouter.get('/', (req, res) => {
     res.json(artistData)
 })
 
+artistRouter.get('/:id', (req, res) => {
+    res.status(200)
+    res.sendFile(path.resolve(__dirname, '../public/detail.html'))
+    
+})
+
 export default artistRouter

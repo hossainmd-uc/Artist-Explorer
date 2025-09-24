@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
-    <link rel="stylesheet" href="/detailStyle.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src=""></script>
+    <script defer src="/scripts/renderArtist.js"></script>
     <title>Artisse</title>
+    <link rel="stylesheet" href="/detailStyle.css" />
   </head>
   <body>
     <header>
-      <span id="headlogo">
-        <img id="logo" src="/logo.png"></img>
-        <h1 id="logotext">Artisse</h1>
-      </span>
-
-      <button href="/">Home</button>
+      <div id="headlogo">
+        <img id="logo" src="/logo.png" alt="Logo" />
+        <div id="logotext">Artisse</div>
+      </div>
+      <a href="/" class="hero-home-btn">Home</a>
     </header>
     <div id="app"></div>
   </body>

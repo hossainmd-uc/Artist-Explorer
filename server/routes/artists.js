@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename)
 
 const artistRouter = express.Router()
 
+
 artistRouter.get('/', (req, res) => {
     res.status(200)
     res.json(artistData)

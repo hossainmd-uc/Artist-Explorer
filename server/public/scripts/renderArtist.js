@@ -1,23 +1,27 @@
-
 async function renderArtist () {
+  let data;
 
-    const response = await fetch('artists')
-    data = await response.json()
+  try {
+    const response = await fetch('/artists');
+    data = await response.json();
+  } catch (exception) {
+    console.log(exception);
+  }
 
-    const app = document.getElementById('app')
+  const app = document.getElementById('app');
+  const mainContainer = document.createElement("div");
+  mainContainer.id = "main-content";
 
-    const mainContainer = document.createElement("div")
-    mainContainer.id = "main-content"
+  const requestedID = parseInt(window.location.href.split('/').pop());
 
-    const requestedID = parseInt(window.location.href.split('/').pop())
-    
-    //--
+  if (data) {
+    const item = data.find(item => item.id === requestedID);
 
     const card = document.createElement("div");
-    card.id = "card";
+    card.id = "detail-card";
 
-    const textContent = document.createElement("div")
-    textContent.id = "textContent"
+    const textContent = document.createElement("div");
+    textContent.id = "detail-text-content";
 
     const name = document.createElement("h1");
     name.textContent = item.name;
@@ -29,13 +33,14 @@ async function renderArtist () {
 
     const image = document.createElement("img");
     image.src = item.image;
-    image.id = "image"
+    image.id = "detail-image";
 
-
-    card.appendChild(textContent)
+    card.appendChild(textContent);
     card.appendChild(image);
 
+    mainContainer.appendChild(card);
+    app.appendChild(mainContainer);
+  }
 }
 
-renderArtist()
-
+renderArtist();

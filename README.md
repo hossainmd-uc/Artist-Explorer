@@ -1,5 +1,5 @@
 
-# WEB103 Project 1 - Artisse - Artist Explorer
+# WEB103 Project 2 - Artisse - Artist Explorer
 
 Submitted by: **Rain Hossain**
 
@@ -12,10 +12,10 @@ Time spent: **1.2** hours
 The following **required** functionality is completed:
 
 <!-- Make sure to check off completed functionality below -->
-- [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
-  - [x] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
-  - [x]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
+- [X] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
+- [X] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
+  - [X] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [X]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
 
 
 The following **optional** features are implemented:

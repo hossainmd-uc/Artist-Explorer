@@ -2,7 +2,8 @@ import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import artistData from '../data/artists.js'
+// import artistData from '../data/artists.js'
+import getGifts from '../controllers/artists.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -10,10 +11,7 @@ const __dirname = path.dirname(__filename)
 const artistRouter = express.Router()
 
 
-artistRouter.get('/', (req, res) => {
-    res.status(200)
-    res.json(artistData)
-})
+artistRouter.get('/', getGifts)
 
 artistRouter.get('/:id', (req, res) => {
     res.status(200)

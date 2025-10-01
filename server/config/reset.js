@@ -26,25 +26,14 @@ async function createArtistsTable(){
 createArtistsTable()
 
 async function seedGiftsTable() {
-    artistData.forEach((artist) => {
-        const insertQuery = {
-            text: 'INSERT INTO artists (name, image, description) VALUES ($1, $2, $3)'
-        }
-        const values = [
-            artist.name,
-            artist.image,
-            artist.description,
-            ]
 
-        pool.query(insertQuery, values, (err, res) => {
-            if (err) {
-                console.error('⚠️ error inserting gift', err)
-                return
-            }
+    const insertQuery =  'INSERT INTO artists (name, image, description) VALUES ($1, $2, $3)'
 
-            console.log(`✅ ${artist.name} added successfully`)
-        })
-    })
+    for (const a of artistData) {
+        const { rows } = await pool.query(insertQuery, [a.name, a.image, a.description]);
+        console.log(`✅ ${a.name} added successfully`);
+    }
+
 }
 
 seedGiftsTable()
